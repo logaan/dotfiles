@@ -1,0 +1,13 @@
+DOTFILES
+
+My configuration files. I'm gradually building these up as I setup my new
+machines. I intend to keep them minimal.
+
+Be carefull of the installation script. It uses ln -sf to symlink the files to
+the home directory. This will overwrite any files or symlinks you currently
+have in your home directory.
+
+Install with:
+
+  rake
+
