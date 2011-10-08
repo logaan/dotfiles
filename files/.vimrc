@@ -21,3 +21,10 @@ set guioptions-=r                     " remove right-hand scroll bar
 " Wrapping
 set nowrap                            " Turn off wrapping
 
+" PLUGINS
+
+" Pathogen
+call pathogen#infect()                " Turn on pathogen
+
+" NERDTree
+map t :NERDTreeToggle<CR>
