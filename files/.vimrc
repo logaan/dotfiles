@@ -14,7 +14,10 @@ set hlsearch                           " highlight search results
 map <leader><space> :noh<CR>         " use \space to hide search results
 
 " Minimal chrome gvim
-:set guioptions-=m                     " remove menu bar
-:set guioptions-=T                     " remove toolbar
-:set guioptions-=r                     " remove right-hand scroll bar
+set guioptions-=m                     " remove menu bar
+set guioptions-=T                     " remove toolbar
+set guioptions-=r                     " remove right-hand scroll bar
+
+" Wrapping
+set nowrap                            " Turn off wrapping
 
