@@ -13,7 +13,9 @@ alias gitdn='git branch | grep \* | awk "{print \$2}" | xargs git pull origin'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
 
-
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# MacVim
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
