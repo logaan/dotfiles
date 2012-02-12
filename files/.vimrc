@@ -48,9 +48,10 @@ map t :NERDTreeToggle<CR>
 map T :NERDTreeFind<CR>
 
 " ConqueTerm
-map <leader>c :ConqueTermVSplit
+map <leader>c :ConqueTermVSplit 
 let g:ConqueTerm_ReadUnfocused = 1    " Allow output without focus
 let g:ConqueTerm_InsertOnEnter = 1    " Jump into insert mode
 let g:ConqueTerm_CWInsert = 1         " Jump from insert mode
 let g:ConqueTerm_SendVisKey = '<leader>r'
 map <leader>s v%\r<CR>            " Execute the current expression
+
