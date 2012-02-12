@@ -8,12 +8,12 @@ set softtabstop=2                      " tab by two spaces
 set shiftwidth=2                       " (auto)indent two spaces
 set autoindent
 
-" Inline search
+" Search
 set incsearch                          " search incrimentally
 set hlsearch                           " highlight search results
 map <leader><space> :noh<CR>         " use \space to hide search results
 
-" Minimal chrome gvim
+" Interface
 set guioptions-=m                     " remove menu bar
 set guioptions-=T                     " remove toolbar
 set guioptions-=r                     " remove right-hand scroll bar
@@ -22,6 +22,7 @@ set guioptions-=r                     " remove right-hand scroll bar
 set nowrap                            " Turn off wrapping
 
 " PLUGINS
+filetype plugin indent on             " Allow filetype based indenting
 
 " Pathogen
 call pathogen#infect()                " Turn on pathogen
