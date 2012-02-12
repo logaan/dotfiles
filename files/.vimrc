@@ -12,14 +12,19 @@ set autoindent
 set incsearch                          " search incrimentally
 set hlsearch                           " highlight search results
 map <leader><space> :noh<CR>         " use \space to hide search results
+set ignorecase
 
 " Interface
 set guioptions-=m                     " remove menu bar
 set guioptions-=T                     " remove toolbar
 set guioptions-=r                     " remove right-hand scroll bar
+set showcmd
 
 " Wrapping
 set nowrap                            " Turn off wrapping
+
+" Git
+command Blame :!git blame %
 
 " PLUGINS
 filetype plugin indent on             " Allow filetype based indenting
@@ -29,3 +34,12 @@ call pathogen#infect()                " Turn on pathogen
 
 " NERDTree
 map t :NERDTreeToggle<CR>
+map T :NERDTreeFind<CR>
+
+" ConqueTerm
+map <leader>c :ConqueTermVSplit
+let g:ConqueTerm_ReadUnfocused = 1    " Allow output without focus
+let g:ConqueTerm_InsertOnEnter = 1    " Jump into insert mode
+let g:ConqueTerm_CWInsert = 1         " Jump from insert mode
+let g:ConqueTerm_SendVisKey = '<leader>r'
+map <leader>s v%\r<CR>            " Execute the current expression
