@@ -1,3 +1,5 @@
 # Screen
-exec screen -xRR
+if [ $TERM == xterm-256color ];
+  then exec screen -xRR;
+fi
 
