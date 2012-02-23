@@ -1,3 +1,3 @@
 # Screen
-exec screen -RR
+exec screen -xRR
 
