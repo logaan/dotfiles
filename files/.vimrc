@@ -13,6 +13,7 @@ set incsearch                          " search incrimentally
 set hlsearch                           " highlight search results
 map <leader><space> :noh<CR>         " use \space to hide search results
 set ignorecase
+set wildignore=*.class,*.jar,tmp/*,public/system/*
 
 " Interface
 set guioptions-=m                     " remove menu bar
