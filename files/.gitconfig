@@ -1,5 +1,5 @@
 [user]
-        name = Logan Campbell-McPherson
+	name = Logan Campbell-McPherson
         email = colin@logaan.net
 
 [alias]
@@ -20,3 +20,7 @@
 [status]
         color = auto
 
+[github]
+	user = logaan
+[core]
+	excludesfile = /Users/logaan/.gitignore
