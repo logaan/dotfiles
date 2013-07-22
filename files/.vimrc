@@ -10,7 +10,13 @@ set background=dark
 colorscheme railscasts
 
 " Running things
-map <space> :w<CR>:!./%<CR>
+map <space> :w<CR>:!make<CR>
+
+" Saving things
+map  :w<CR>
+
+" Copy entire file to system clipboard
+map  :%yank +<cr>
 
 " Indentation
 set expandtab                          " use spaces instead of tabs
@@ -25,6 +31,7 @@ set hlsearch                           " highlight search results
 map <leader><space> :noh<CR>
 " set ignorecase
 set wildignore=*.class,tmp/*,public/system/*
+set wildignore+=*/target/*
 
 " Interface
 set guioptions-=m                     " remove menu bar
@@ -36,8 +43,8 @@ set showcmd
 set nowrap                            " Turn off wrapping
 
 " Use the damn hjkl keys
-map  <Up>    
-map  <Down>  
+map  <Up>    <Nop>
+map  <Down>  <Nop>
 map  <Left>  <Nop>
 map  <Right> <Nop>
 
@@ -50,42 +57,27 @@ imap <Right> <Nop>
 map j gj
 map k gk
 
+" Whitespace removal
+map <leader>s :silent! %s/\s\+$//<cr>
+
 " Git
 command! Blame :!git blame %
 
 " Make
-map m :w<CR>:make!<CR>
+" map m :w<CR>:make!<CR>
 
 " PLUGINS
 filetype plugin indent on             " Allow filetype based indenting
 
 " NERDTree
-map t :NERDTreeToggle<CR>
-map T :NERDTreeFind<CR>
+map <leader>t :NERDTreeToggle<CR>
+map <leader>T :NERDTreeFind<CR>
 
 " ConqueTerm
-let g:ConqueTerm_SendVisKey = '<leader>r'
-
-"Clojure
-let g:vimclojure#ParenRainbowColorsDark = {
-\ '1': 'ctermfg=blue      guifg=orange1',
-\ '2': 'ctermfg=brown       guifg=yellow1',
-\ '3': 'ctermfg=darkblue        guifg=greenyellow',
-\ '4': 'ctermfg=darkgreen     guifg=green1',
-\ '5': 'ctermfg=darkmagenta         guifg=springgreen1',
-\ '6': 'ctermfg=darkred      guifg=cyan1',
-\ '7': 'ctermfg=lightblue       guifg=slateblue1',
-\ '8': 'ctermfg=lightgreen        guifg=magenta1',
-\ '9': 'ctermfg=lightred     guifg=purple1'
-\ }
-
-let vimclojure#HighlightBuiltins   = 1
-let vimclojure#DynamicHighlighting = 1
-let vimclojure#ParenRainbow        = 1
-let vimclojure#WantNailgun         = 1
-let vimclojure#SplitPos            = "right"
-let vimclojure#SplitSize           = 80
-map K :call vimclojure#DocLookup(expand("<cword>"))<CR>
+let g:ConqueTerm_SendVisKey    = '<leader>r'
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_CWInsert      = 1
+let g:ConqueTerm_InsertOnEnter = 1
 
 " Vim gist
 let g:gist_open_browser_after_post = 1
@@ -93,8 +85,19 @@ let g:gist_post_private = 1
 
 map <leader>w :set textwidth=79<CR>
 
+" CtrlP
+let g:ctrlp_map = '<c-l>'
 let g:ctrlp_extensions = ['tag']
 map  :CtrlPMRUFiles<CR>
 map  :CtrlPTag<CR>
-map <leader>t :!ctags -R .<CR><CR>
+let g:ctrlp_root_markers = ['Makefile']
+
+" Navigating vimgrep results
+map  :cn<CR>
+map  :cp<CR>
+
+map ,f :<C-U>call PareditWrap('(',')')<CR>a
+
+" Paredit
+let g:paredit_electric_return = 0
 

@@ -1,9 +1,9 @@
 [user]
-	name = Logan Campbell-McPherson
+	name = Logan Campbell
         email = colin@logaan.net
 
 [alias]
-        ci = commit -a
+        ci = commit -va
         co = checkout
         st = status
 
