@@ -9,14 +9,14 @@ syntax enable                          " enable syntax highlighting
 set background=dark
 colorscheme railscasts
 
-" Running things
-map <space> :w<CR>:!make<CR>
-
 " Saving things
 map  :w<CR>
 
+" Highlight current word without moving cursor
+map  *N
+
 " Copy entire file to system clipboard
-map  :%yank +<cr>
+map <leader>y :%yank +<cr>
 
 " Indentation
 set expandtab                          " use spaces instead of tabs
@@ -43,8 +43,8 @@ set showcmd
 set nowrap                            " Turn off wrapping
 
 " Use the damn hjkl keys
-map  <Up>    <Nop>
-map  <Down>  <Nop>
+map  <Up>    
+map  <Down>  
 map  <Left>  <Nop>
 map  <Right> <Nop>
 
@@ -72,6 +72,7 @@ filetype plugin indent on             " Allow filetype based indenting
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>
 map <leader>T :NERDTreeFind<CR>
+let g:NERDTreeMapHelp = ''
 
 " ConqueTerm
 let g:ConqueTerm_SendVisKey    = '<leader>r'
@@ -100,4 +101,7 @@ map ,f :<C-U>call PareditWrap('(',')')<CR>a
 
 " Paredit
 let g:paredit_electric_return = 0
+
+" APDM
+map <leader>f yiw:e `./find.sh "`
 

@@ -1,11 +1,12 @@
 [user]
 	name = Logan Campbell
-        email = colin@logaan.net
+	email = colin@logaan.net
 
 [alias]
         ci = commit -va
         co = checkout
         st = status
+        diff = diff --patience
 
 [apply]
         whitespace = strip

@@ -15,6 +15,8 @@ alias lots="cd /Users/logaan/hacking/clojure/lists-of-things/"
 alias asjp="cd /Users/logaan/silverpond/autosupplyjapan/asjprails"
 alias asgm="cd /Users/logaan/silverpond/autosupplyjapan/greasemonkey/"
 
+alias subl="open -a /Applications/Sublime\ Text.app"
+
 # MySQL
 alias mysqlstart='sudo /opt/local/bin/mysqld_safe5 &'
 alias mysqlstop='/opt/local/bin/mysqladmin5 -u root -p shutdown'
